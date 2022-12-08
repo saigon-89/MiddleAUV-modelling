@@ -1,1 +1,2 @@
-# MiddleAUV-modelling
+# MiddleAUV модель
+https://robocenter.net/goods/kit/middleauv/
