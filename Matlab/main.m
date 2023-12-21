@@ -68,7 +68,7 @@ D = @(v)(D_LIN + D_QUAD.*abs(v));
 %% ÌÎÄÅËÈĞÎÂÀÍÈÅ ÄÂÈÆÅÍÈß ÏĞÈ ÏĞÅÄÎÏĞÅÄÅËÅÍÍÎÌ ÑÈËÎÂÎÌ ÂÎÇÄÅÉÑÒÂÈÈ
 eta0 = [0, 0, 0, 0, 0, 0]'; 
 v0 = [0, 0, 0, 0, 0, 0]';
-tau = @(code)tau_c*[0.5;1;1;0.5];
+tau = @(code)tau_c*[0.01;0.01;0.01;0.01];
 t_end = 60; dt = 0.01;
 [t,Y] = ode45(@(t,y)odefcn(t,y,M,C,D,g,J,tau,'simp'), 0:dt:t_end, [eta0; v0]);
 
@@ -96,6 +96,7 @@ plot3(eta(end,1), eta(end,2), eta(end,3), 'rO')
 legend('òğàåêòîğèÿ AUV', 'æåëàåìîå ïîëîæåíèå', 'Location', 'Best')
 xlabel('x(t)'), ylabel('y(t)'), zlabel('z(t)'), grid on
 set(gca, 'YDir', 'reverse');
+set(gca, 'ZDir', 'reverse');
 view([-1,1,1])
 axis equal
 legend('off')
